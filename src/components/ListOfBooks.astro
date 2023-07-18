@@ -1,0 +1,17 @@
+---
+  import Book from './Book.astro'
+  import booksDatabase from '../db/books'
+---
+
+<ul class="grid grid-cols-2 md:grid-cols-3 gap-3">
+  {
+    booksDatabase.map((row) => (
+      <li>
+        <Book 
+          id={row.id}
+          title={row.title}
+          image={row.image} />
+      </li>
+    ))
+  }
+</ul>

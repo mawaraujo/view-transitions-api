@@ -1,0 +1,16 @@
+---
+  import type { Book } from '../typings/books';
+  
+  const { id, title, image } = Astro.props as Book
+---
+
+<a 
+  href={`/${id}`}
+  class="hover:scale-105 inline-block transition-all hover:contrast-125 hover:shadow">
+
+  <img
+    alt={`Portada del libro ${title}`}
+    src={image}
+    style={`view-transition-name: book-${id}`}
+    class="aspect-[389/500] h-full object-cover w-full max-w-full h-full rounded-lg" />
+</a>
